@@ -11,7 +11,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final formkey = GlobalKey<FormState>();
+  final formKey = GlobalKey<FormState>();
   String email = "";
   String password = "";
   @override
@@ -21,7 +21,7 @@ class _LoginPageState extends State<LoginPage> {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 80),
         child: Form(
-            key: formkey,
+            key: formKey,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
