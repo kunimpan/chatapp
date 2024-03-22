@@ -77,6 +77,8 @@ class _HomePageState extends State<HomePage> {
             const Divider(height: 2),
             ListTile(
               onTap: () {},
+              selected: true,
+              selectedColor: Theme.of(context).primaryColor,
               contentPadding:
                   const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
               leading: const Icon(Icons.group),
@@ -87,7 +89,8 @@ class _HomePageState extends State<HomePage> {
             ),
             ListTile(
               onTap: () {
-                nextScreen(context, const ProfilePage());
+                nextScreenReplace(
+                    context, ProfilePage(userName: userName, email: email));
               },
               contentPadding:
                   const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
@@ -108,7 +111,9 @@ class _HomePageState extends State<HomePage> {
                         content: const Text("Are you sure want to logout?"),
                         actions: [
                           IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
                             icon: const Icon(
                               Icons.cancel,
                               color: Colors.red,
