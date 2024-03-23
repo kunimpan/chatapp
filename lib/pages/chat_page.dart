@@ -50,8 +50,7 @@ class _ChatPageState extends State<ChatPage> {
         elevation: 0,
         title: Text(
           widget.groupName,
-          style: const TextStyle(
-              color: Colors.white, fontWeight: FontWeight.bold, fontSize: 27),
+          style: const TextStyle(color: Colors.white),
         ),
         backgroundColor: Theme.of(context).primaryColor,
         actions: [
