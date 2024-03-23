@@ -43,15 +43,18 @@ class _LoginPageState extends State<LoginPage> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
                           const Text(
-                            "Groupie",
+                            "Chat App",
                             style: TextStyle(
                                 fontSize: 40, fontWeight: FontWeight.bold),
                           ),
                           const SizedBox(height: 10),
-                          const Text("Login now to see what they are talking!",
+                          const Text(
+                              "Log in and find your favorite chat group!",
                               style: TextStyle(
                                   fontSize: 15, fontWeight: FontWeight.w400)),
-                          Image.asset("assets/login.png"),
+                          const SizedBox(height: 20),
+                          Image.asset("assets/register.jpg"),
+                          const SizedBox(height: 20),
                           TextFormField(
                             decoration: textInputDecoration.copyWith(
                                 labelText: "Email",
@@ -154,6 +157,7 @@ class _LoginPageState extends State<LoginPage> {
           await HelperFunctions.saveUserLoggedInStatus(true);
           await HelperFunctions.saveUserEmailSF(email);
           await HelperFunctions.saveUserNameSF(snapshot.docs[0]['fullName']);
+
           nextScreenReplace(context, const HomePage());
         } else {
           showSnackBar(context, Colors.red, value);
